@@ -1,13 +1,14 @@
 from telethon.sync import TelegramClient, events
 from telethon.tl import functions, types
 import asyncio, sys, re, time, traceback, datetime, os
-import aiofiles, logging
+import aiofiles, logging, aiohttp
 from PIL import Image
 from colorama import Fore, Style, init
 from inspect import signature, Parameter
 from collections import deque
-import enchant
+import enchant, aiohttp
 import loginbot, threading
+
 
 init()
 
@@ -25,9 +26,9 @@ api_hash2 = '9fd996011546868d890ed7b5cc9975ee'
 
 class Paste:
 	def __init__(self):
-		self.run = True; self.k = '';
+		self.run = True; self.k = ''; self.rot = 0
 		self.open = 0; self.claim = 0; self.today = str(datetime.date.today())
-		self.asyc_q = asyncio.Queue()
+		self.asyc_q = asyncio.Queue();
 		self.boxarr = {0:["safe_crypto_box", -1001819819794], 3:["My_Channel", -1002092644299],
 		29:["abemav", -1001569554310],
 		2:["Box_Tiger", -1001865918932], 5:["sheikhbd1box", -1001838514169], 
@@ -72,6 +73,7 @@ class Paste:
 		83:["CryptoKraken", -1001680561996], 84:["Crypto_LuckyChat", -1001799171463], 
 		85:["ByKaranteli", -1001799038195]}
 		
+		self.ltasks = []
 		pops = [8, 16]
 		for i in range(2):
 			self.boxarr.pop(pops[i])
@@ -92,15 +94,15 @@ class Paste:
 
 
 
-	async def file_garb(self, file, text=None, s_text=None):
+	def file_garb(self, file, text=None, s_text=None):
 		directory = os.path.abspath(os.getcwd())
 		filepath = os.path.join(directory, file)
 		try:
 			if os.path.exists(filepath):
 				if text is not None:
 					logging.info(f"Opening Trashfile\nInvalid code disposed..:{text}")
-					async with aiofiles.open(filepath, 'a') as dbin:
-						await dbin.write(text+'\n'); await dbin.flush()
+					with open(filepath, 'a') as dbin:
+						dbin.write(text+'\n'); dbin.flush()
 				else:
 					lines = []; print("<sc_tf>")
 					with open(filepath, 'r') as read_bin:
@@ -231,8 +233,8 @@ class Tel_Fetch(Paste):
 	def sign(self, func):
 		 return signature(func)
 
-	async def fetch_codes(self, file):
-		arr = []; self.used = set()
+	async def fetch_codes(self, file, set_):
+		arr = []; set_ = set()
 		try:
 			with open(file, 'r') as codes:
 				for line in codes:
@@ -240,11 +242,11 @@ class Tel_Fetch(Paste):
 			arr = arr[::-1] #To fetch most current ones
 			for i in range(50):
 				try:	
-					e = arr[i]; self.used.add(e)
+					e = arr[i]; set_.add(e)
 				except IndexError:
 					pass
 
-			logging.info(f"{self.used}")
+			logging.info(f"{set_}")
 			arr = arr[::-1] #To paste most current ones.
 			with open(file, 'w') as codes:
 				codes.write(''); codes.flush(); codes.close()
@@ -327,13 +329,12 @@ class Tel_Fetch(Paste):
 						await self.extract_codes("main", message, chatname)
 		
 		async def on_new_message(event, chat_name:str):
-			await asyncio.sleep(0.115256); 
+			await asyncio.sleep(0.05256); 
 			try:
 				message = event.message; Peerid = message.sender
 				checktype = message.sender.id if Peerid else False
 				await Typeof(checktype, message, chat_name)
-				len_users = loginbot.users;
-				tsks = []
+				len_users = loginbot.users; tsks = []
 				for each in len_users:
 					tsks.append(asyncio.create_task(self.is_active(each)))
 				await asyncio.gather(*tsks)
@@ -348,27 +349,71 @@ class Tel_Fetch(Paste):
 			self.client1.add_event_handler(
 				lambda e, name=chat_names[i]: on_new_message(e, name), 
 				events.NewMessage(chats=chat_ids[i]))
-		
+
 		await self.client1.run_until_disconnected()
 
-	async def is_active(self, id_):
-		checktime = time.time()
-		activeuser = loginbot.users[id_]
-		if (checktime - activeuser["startTime"] >= 23 * 3600) and (not activeuser["waitTime"]):
-			activeuser["login"] = False
-			loginbot.bot.send_message(id_, "Session Expired, Attempt New Login👻")
-			#send_message every 2mins to avoid frequent sending...
-			activeuser["waitTime"] = True; 
-			await asyncio.sleep(120); activeuser["waitTime"] = False
 
-		isuser_loggedin = activeuser["login"]
-		if (not self.active) and isuser_loggedin:
-			await self.process_message(id_);	
-		self.active = False
+	async def is_active(self, id_):
+		activeuser = loginbot.users[id_]
+
+		iswait = activeuser["waitTime"]
+		if iswait: 
+			loginbot.bot.send_message(id_, "Session Expired👻"); activeuser["waitTime"] = False 
+			await asyncio.sleep(2000); activeuser["waitTime"] = True
+		else:
+			await self.process_message(id_)
+
+
+	async def process_message(self, iD):
+		try:
+			activeuser = loginbot.users[iD];
+			#activeuser['queue'] = self.asyc_q
+			
+			dup = self.asyc_q
+			while not dup.empty():
+				item = await dup.get(); await activeuser['queue'].put(item)
+
+			queue = activeuser['queue']; myset = activeuser['set']; isuser_loggedin = activeuser['login']
+			
+			if isuser_loggedin:
+				activeuser["waitTime"] = False; self.rot += 1
+				await self.load_queue(iD, activeuser, queue, myset)
+		except Exception as e:
+			print(f"{e}, {sys.exc_info()}")
+
+	
+	async def load_queue(self, iD, activeuser, queue, myset):
+		print("Load Queue:", iD); proxylen = len(loginbot.proxies)
+		self.rot %= proxylen; proxy = loginbot.proxies[self.rot]
+		print(f"Using Proxy [{proxy}]")
+		while not queue.empty():
+			k = await queue.get(); fg = self.file_garb("Invalid_codes.txt", s_text=k)
+			if (k not in myset) and fg:
+
+				asyncio.create_task(
+					self.client1(functions.messages.SetTypingRequest(
+						-1001862934269, types.SendMessageTypingAction())))
+				
+				valid = await loginbot.Login.attemptcode(activeuser['session'], k, iD, '')
+
+				if valid != None:
+					logouttime = datetime.datetime.now(); hr = logouttime.hour;
+					mins = logouttime.minute; secs = logouttime.second; 
+					if valid["message"] == "TypeErr":
+						print(valid["e"])
+					elif valid["message"] == "Please try":
+						activeuser["login"] = False
+						loginbot.bot.send_message(iD, f"[Oops🙊]\n{valid['e']}\n @{hr}:{mins:02d}:{secs:02d} 🙄")
+					elif valid["message"] == "Bot":  
+						activeuser["login"] = False;
+						loginbot.bot.send_message(iD, f"{valid['e']}\n@ {hr}:{mins:02d}:{secs:02d}")
+				myset.add(k); 
+			await asyncio.sleep(0.0000001)
+		self.asyc_q = asyncio.Queue()
 
 
 	async def check_client(self):
-		"""my_id = 985086727; my_channel_id = -1002092644299
+		"""my_channel_id = -1002092644299
 		[-1001913150519, CryptX]
 		-1001515379979: Binance Crypto Box Code
 		CRYPTO, -1001663108480
@@ -393,26 +438,24 @@ class Tel_Fetch(Paste):
 		except Exception as e:
 			print(e);
 			
+		bottask = threading.Thread(target=loginbot.main)
+		bottask.start()
+		task_one = asyncio.create_task(self.run_true()); task_two = asyncio.create_task(self._call())
+		await task_one; await task_two;
 
-		asyncio.create_task(self.fetch_codes("Opened_codes.txt"))#reset
-
-		telebot_task = threading.Thread(target=loginbot.main)
-		run_true = threading.Thread(target=self.run_true) 
-		telebot_task.start(); run_true.start()
-		await self._call();
-		
-	def run_true(self):
+	async def run_true(self):
 		print(f"{Fore.BLUE}Running...{Style.RESET_ALL}")
 		while True:
 			dtime = datetime.datetime.now(); self.today = str(dtime.date());
+			if loginbot.items:
+				await loginbot.create_session(*loginbot.items)
+				loginbot.items = []
 			ctime = dtime.time(); hour = ctime.hour
 			filesz = os.path.getsize('TGLOG.log')
 			if filesz >= 50 * 1024:
 				with open('TGLOG.log', 'w') as file:
 					file.write('')
-
-			if len(self.used) >= 350:
-				asyncio.create_task(self.fetch_codes("Opened_codes.txt"))
+			await asyncio.sleep(0)
 
 	async def strict_check(self, code, l):
 		addword = ''
@@ -423,27 +466,6 @@ class Tel_Fetch(Paste):
 					return True
 		return False
 
-
-	async def process_message(self, iD):
-		try:
-			activeuser = loginbot.users[iD]
-			while not self.asyc_q.empty():
-				self.active = True
-				k = await self.asyc_q.get(); self.k = k
-				fg = await self.file_garb("Invalid_codes.txt", s_text=k)
-				if (k not in self.used) and fg:
-					#asyncio.create_task(
-					#	self.client1(functions.messages.SetTypingRequest(
-					#		-1001862934269, types.SendMessageTypingAction())))
-					print("<p>"); valid = loginbot.Login.attemptcode(activeuser["session"], k, iD)
-					print("ValID:", valid)
-					if valid != None:
-						activeuser["login"] = False; loginbot.coins[iD] = {}
-						loginbot.bot.send_message(iD, valid["message"])
-					self.used.add(k)
-				self.used.add(k)
-		except Exception as e:
-			print(f"{e}, {sys.exc_info()}")
 
 	def filter_text(self, pat, text):
 		splitted = re.sub(pat, ' ', text).split(' ')
@@ -461,7 +483,6 @@ class Tel_Fetch(Paste):
 		
 		resetchats = {"TopCoinChat":reset_topcoin}
 		resetchats[chat](checkfor, maintext)
-		
 	
 
 	def swap(self, m):
@@ -475,7 +496,6 @@ class Tel_Fetch(Paste):
 	async def extract_codes(self, func_name, t, chatname):
 		real_text = t.text;  p = t.photo
 
-		
 		async def main(text):
 			print("Using main_extract..")
 			match = self.filter_text(r'[^A-Z\d]', text)
@@ -495,8 +515,7 @@ class Tel_Fetch(Paste):
 			match = self.filter_text(r'[^A-Z\da-z]', text)
 			for c in match:
 				if c != '':
-					print([c])
-					await self.asyc_q.put(c)
+					print([c]); await self.asyc_q.put(c)
 
 		async def Me(text):
 			print('Trying I.')
@@ -524,7 +543,7 @@ class Tel_Fetch(Paste):
 				ref_txt = re.sub(r'[🕐🕑🕒🕓🕔🕕🕖🎱🕘]', replc, text.strip())
 				mat = re.findall(r'(^(?=.*[A-Z])[A-Z\d]{8})(?!.+)', ref_txt)
 				if mat:
-					await self.asyc_q.put(mat.pop())
+					self.asyc_q.put(mat.pop())
 			asyncio.create_task(main(text)); await type1(text)
 
 
@@ -631,11 +650,5 @@ async def run_telethon():
 	await Run_client.check_client()
 
 def start_process():
-	def start_paste():
-		ans = str(input("Do you want to start pasting(y/n): "))
-		if ans.lower() == "y":
-			asyncio.run(run_telethon())
-		else:
-			start_paste()
-	start_paste()
+	asyncio.run(run_telethon())
 start_process()
