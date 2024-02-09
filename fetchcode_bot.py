@@ -1,5 +1,6 @@
 from telethon.sync import TelegramClient, events
 from telethon.tl import functions, types
+from getpass import getpass
 from telethon.errors import *
 import asyncio, sys, re, time, traceback, datetime, os
 import aiofiles, logging, aiohttp
@@ -413,9 +414,13 @@ class Tel_Fetch(Paste):
 	async def check_client(self):
 		"""my_channel_id = -1002092644299"""
 		try:
-			isconn = self.client1.is_connected()
-			if isconn:
+			isconn = self.client1.is_connected(); isauth = self.client1.is_user_authorized()
+			if isconn and await isauth:
 				print(f"{Fore.GREEN}[+]Client Is active.{Style.RESET_ALL}")
+				bottask = threading.Thread(target=loginbot.main)
+				bottask.start()
+				task_one = asyncio.create_task(self.run_true()); task_two = asyncio.create_task(self._call())
+				await task_one; await task_two;
 				#self.open, self.claim = self.write_count(self.today, "Counts.txt")
 			else:
 			 	print(f"{Fore.RED}[-]Not connected!{Style.RESET_ALL}")
@@ -424,28 +429,23 @@ class Tel_Fetch(Paste):
 			 	if reply == 1:
 			 		await self.client1.start(); await self.check_client()
 			 	else:
+			 		await self.client1.connect();
 			 		phone = input("Enter your telegram phone no. : ")
-			 		self.client1.connect();
-			 		self.client1.send_code_request(phone);
+			 		await self.client1.send_code_request(phone);
 			 		code = input("Enter the code received: ")
 			 		try:
-			 			self.client1.sign_in(phone, code)
-			 		except SessionPasswordNeededError as e:
-			 			print("2FA needed!")
-			 			password = input("Enter your password: ")
-			 			self.client1.sign_in(phone, code, password=password)
-			 		finally:
+			 			await self.client1.sign_in(phone, code)
 			 			await self.check_client()
-
-
+			 		except SessionPasswordNeededError:
+			 			password = getpass("Enter your password: ")
+			 			try:
+			 				await self.client1.sign_in(password=password)
+			 				await self.check_client()
+			 			except Exception as e:
+			 				print("Error:", e)
 		except Exception as e:
 			print(e);
 			
-		bottask = threading.Thread(target=loginbot.main)
-		bottask.start()
-		task_one = asyncio.create_task(self.run_true()); task_two = asyncio.create_task(self._call())
-		await task_one; await task_two;
-
 	async def run_true(self):
 		print(f"{Fore.BLUE}Running...{Style.RESET_ALL}")
 		while True:

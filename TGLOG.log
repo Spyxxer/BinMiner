@@ -1,187 +1,87 @@
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:telethon.network.mtprotosender:Connection attempt 58...
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-WARNING:telethon.network.mtprotosender:Attempt 58 at connecting failed: OSError: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.telegram.org:443
-DEBUG:asyncio:Using proactor: IocpProactor
-DEBUG:asyncio:Using proactor: IocpProactor
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling update UpdateShort
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.client.updates:Timeout waiting for updates expired
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling update UpdateShort
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:urllib3.connectionpool:https://api.telegram.org:443 "GET /bot6396911627:AAEVqlJMPqDsf3x26UL8c-P36TzPN-aj6SA/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling update UpdateShort
+DEBUG:telethon.network.mtprotosender:Handling update UpdateShort
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.extensions.messagepacker:Assigned msg_id = 7333610212921922240 to PingRequest (18406c55cc0)
+DEBUG:telethon.network.mtprotosender:Encrypting 1 message(s) in 28 bytes for sending
+DEBUG:telethon.network.mtprotosender:Encrypted messages put in a queue to be sent
+DEBUG:telethon.network.mtprotosender:Waiting for messages to send...
+DEBUG:telethon.extensions.messagepacker:Assigned msg_id = 7333610212921922244 to MsgsAck (18406c56560)
+DEBUG:telethon.network.mtprotosender:Encrypting 1 message(s) in 276 bytes for sending
+DEBUG:telethon.network.mtprotosender:Encrypted messages put in a queue to be sent
+DEBUG:telethon.network.mtprotosender:Waiting for messages to send...
+DEBUG:telethon.network.mtprotosender:Handling pong for message 7333610212921922240
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:urllib3.connectionpool:https://api.telegram.org:443 "GET /bot6396911627:AAEVqlJMPqDsf3x26UL8c-P36TzPN-aj6SA/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+DEBUG:telethon.network.mtprotosender:Handling update UpdateShort
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling container
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
+DEBUG:telethon.network.mtprotosender:Handling gzipped data
+DEBUG:telethon.network.mtprotosender:Handling update Updates
+DEBUG:telethon.network.mtprotosender:Receiving items from the network...
