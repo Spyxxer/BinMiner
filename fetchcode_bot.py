@@ -1,5 +1,6 @@
 from telethon.sync import TelegramClient, events
 from telethon.tl import functions, types
+from telethon.errors import *
 import asyncio, sys, re, time, traceback, datetime, os
 import aiofiles, logging, aiohttp
 from PIL import Image
@@ -73,12 +74,10 @@ class Paste:
 		83:["CryptoKraken", -1001680561996], 84:["Crypto_LuckyChat", -1001799171463], 
 		85:["ByKaranteli", -1001799038195]}
 		
-		self.ltasks = []
 		pops = [8, 16]
 		for i in range(2):
 			self.boxarr.pop(pops[i])
 		self.count = 0; self.x = 0;
-
 
 
 
@@ -357,7 +356,7 @@ class Tel_Fetch(Paste):
 		activeuser = loginbot.users[id_]
 
 		iswait = activeuser["waitTime"]
-		if iswait: 
+		if iswait and (not activeuser['login']): 
 			loginbot.bot.send_message(id_, "Session Expired👻"); activeuser["waitTime"] = False 
 			await asyncio.sleep(2000); activeuser["waitTime"] = True
 		else:
@@ -377,7 +376,7 @@ class Tel_Fetch(Paste):
 			
 			if isuser_loggedin:
 				activeuser["waitTime"] = False; self.rot += 1
-				await self.load_queue(iD, activeuser, queue, myset)
+				asyncio.create_task(self.load_queue(iD, activeuser, queue, myset))#for multiple users
 		except Exception as e:
 			print(f"{e}, {sys.exc_info()}")
 
@@ -387,9 +386,9 @@ class Tel_Fetch(Paste):
 		self.rot %= proxylen; proxy = loginbot.proxies[self.rot]
 		print(f"Using Proxy [{proxy}]")
 		while not queue.empty():
+			await asyncio.sleep(0.1)
 			k = await queue.get(); fg = self.file_garb("Invalid_codes.txt", s_text=k)
 			if (k not in myset) and fg:
-
 				asyncio.create_task(
 					self.client1(functions.messages.SetTypingRequest(
 						-1001862934269, types.SendMessageTypingAction())))
@@ -408,24 +407,11 @@ class Tel_Fetch(Paste):
 						activeuser["login"] = False;
 						loginbot.bot.send_message(iD, f"{valid['e']}\n@ {hr}:{mins:02d}:{secs:02d}")
 				myset.add(k); 
-			await asyncio.sleep(0.0000001)
 		self.asyc_q = asyncio.Queue()
 
 
 	async def check_client(self):
-		"""my_channel_id = -1002092644299
-		[-1001913150519, CryptX]
-		-1001515379979: Binance Crypto Box Code
-		CRYPTO, -1001663108480
-		-1001978966049: 𝔾𝕌𝕃𝔽_𝕃𝕀𝕆ℕ @ 𝟚𝟜/𝟟
-		-1001677216759: Crypto Box Binance
-		-1001908133833: Crypto Hub
-		-1001784909674: Double Crypto BOX
-		-1001884133352: CryptoGloder | Crypto Box Code Binance
-		-1001976904636: CRYPTO JUMM [BOX]
-		-1001909418370: [𝐃𝐎𝐆 𝐁𝐎𝐗]
-		-1001641479344: 🦁 𝕲𝖚𝖑𝖋_𝕷𝖎𝖔𝖓𝖘..™
-		[-1001761501842, Exist CryptoBox]"""
+		"""my_channel_id = -1002092644299"""
 		try:
 			isconn = self.client1.is_connected()
 			if isconn:
@@ -434,7 +420,24 @@ class Tel_Fetch(Paste):
 			else:
 			 	print(f"{Fore.RED}[-]Not connected!{Style.RESET_ALL}")
 			 	print(f"{Fore.RED}[+]Trying to start client.{Style.RESET_ALL}")
-			 	await self.client1.start(); await self.check_client()
+			 	reply = int(input("Select device type\n[1]Pc\n[2]Mobile\n:"))
+			 	if reply == 1:
+			 		await self.client1.start(); await self.check_client()
+			 	else:
+			 		phone = input("Enter your telegram phone no. : ")
+			 		self.client1.connect();
+			 		self.client1.send_code_request(phone);
+			 		code = input("Enter the code received: ")
+			 		try:
+			 			self.client1.sign_in(phone, code)
+			 		except SessionPasswordNeededError as e:
+			 			print("2FA needed!")
+			 			password = input("Enter your password: ")
+			 			self.client1.sign_in(phone, code, password=password)
+			 		finally:
+			 			await self.check_client()
+
+
 		except Exception as e:
 			print(e);
 			
